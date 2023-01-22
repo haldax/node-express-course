@@ -1,7 +1,10 @@
 const { readFile, writeFile } = require('fs').promises
-// const util = require('util')
-// const readFilePromise = util.promisify(readFile)
-// const writeFilePromise = util.promisify(writeFile)
+// this is equal to below:
+/*
+const util = require('util')
+const readFilePromise = util.promisify(readFile)
+const writeFilePromise = util.promisify(writeFile)
+*/
 
 const start = async () => {
   try {
@@ -9,9 +12,7 @@ const start = async () => {
     const second = await readFile('./content/second.txt', 'utf8')
     await writeFile(
       './content/result-mind-grenade.txt',
-      `THIS IS AWESOME : ${first} ${second}`,
-      { flag: 'a' }
-    )
+      `THIS IS AWESOME : ${first} ${second}`, { flag: 'a' })
     console.log(first, second)
   } catch (error) {
     console.log(error)
@@ -20,6 +21,7 @@ const start = async () => {
 
 start()
 
+// this is equal to below - creating our own wrapper function with promise object:
 // const getText = (path) => {
 //   return new Promise((resolve, reject) => {
 //     readFile(path, 'utf8', (err, data) => {
@@ -31,6 +33,7 @@ start()
 //     })
 //   })
 // }
+//
 // getText('./content/first.txt')
-//   .then((result) => console.log(result))
-//   .catch((err) => console.log(err))
+//     .then((result) => console.log(result))
+//     .catch((err) => console.log(err))

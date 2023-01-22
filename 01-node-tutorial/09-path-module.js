@@ -8,5 +8,6 @@ console.log(filePath)
 const base = path.basename(filePath)
 console.log(base)
 
+// when program runs in different environment, we might need path to access files
 const absolute = path.resolve(__dirname, 'content', 'subfolder', 'test.txt')
 console.log(absolute)

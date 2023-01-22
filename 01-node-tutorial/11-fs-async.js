@@ -1,6 +1,9 @@
+// readFileSync is synchronous, readFile is asynchronous
 const { readFile, writeFile } = require('fs')
 
 console.log('start')
+// third argument is a callback function
+// if without encoding, we are only getting integers
 readFile('./content/first.txt', 'utf8', (err, result) => {
   if (err) {
     console.log(err)
@@ -16,11 +19,11 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
     writeFile(
       './content/result-async.txt',
       `Here is the result : ${first}, ${second}`,
-      (err, result) => {
-        if (err) {
-          console.log(err)
-          return
-        }
+       (err, result) => {
+          if (err) {
+              console.log(err)
+              return
+            }
         console.log('done with this task')
       }
     )

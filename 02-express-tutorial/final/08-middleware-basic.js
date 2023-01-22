@@ -2,15 +2,17 @@ const express = require('express')
 const app = express()
 
 //  req => middleware => res
-
+// must pass onto the next middleware
 const logger = (req, res, next) => {
   const method = req.method
   const url = req.url
   const time = new Date().getFullYear()
   console.log(method, url, time)
   next()
+  // or send back the response
 }
 
+// put the middleware function in the second argument
 app.get('/', logger, (req, res) => {
   res.send('Home')
 })

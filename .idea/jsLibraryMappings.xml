@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{node-express-course/node_modules}" />
+    <file url="file://$PROJECT_DIR$/01-node-tutorial" libraries="{node-express-course/01-node-tutorial/node_modules}" />
+    <file url="PROJECT" libraries="{@types/express, node-express-course/01-node-tutorial/node_modules, node-express-course/02-express-tutorial/node_modules, node-express-course/node_modules}" />
+    <includedPredefinedLibrary name="Node.js Core" />
+  </component>
+</project>

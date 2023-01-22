@@ -4,9 +4,12 @@ const morgan = require('morgan')
 const logger = require('./logger')
 const authorize = require('./authorize')
 //  req => middleware => res
-
+// use multiple middleware functions, place them in an array
 // app.use([logger, authorize])
-// app.use(express.static('./public'))
+
+// express has many middleware functions
+//app.use(express.static('./public'))
+
 app.use(morgan('tiny'))
 
 app.get('/', (req, res) => {
